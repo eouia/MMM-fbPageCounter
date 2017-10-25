@@ -59,7 +59,7 @@ Now you have `Page ID` and `Permanent Page Access Token` for your target page.
     position:"top_left",
     config: {
         access_token: "<your Permanent Page Access Token>",
-    		page_id: "<your target Page ID>",
+    	page_id: "<your target Page ID>",
       	refresh_interval_sec: 30,
         size:'default'
     }
