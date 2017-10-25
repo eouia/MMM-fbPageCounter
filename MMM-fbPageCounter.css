@@ -1,0 +1,48 @@
+.fb_board {
+  padding:5px;
+  background-color:#FFF;
+}
+/*
+.fb_board .letter {
+  display:inline-block;
+  width:60px;
+  height:120px;
+  border:1px solid #F00;
+  background-color:#999;
+  text-align:center;
+  vertical-align: baseline;
+  font-size:2em;
+  line-height: 2em;
+}
+*/
+ul {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+ul.flip-counter {
+  position: static; 
+  left:0;
+  list-style-type: none;
+  background-image:url("/modules/MMM-fbPageCounter/fb-art.png");
+  background-repeat:no-repeat;
+  background-size: contain;
+
+}
+
+.flip-counter.default {
+  padding:0px;
+  height:90px;
+  padding-left:100px;
+}
+
+.flip-counter.small {
+  padding:0px;
+  height:40px;
+  padding-left:50px;
+}
+.flip-counter.huge {
+  padding:0px;
+  height:200px;
+  padding-left:220px;
+}
