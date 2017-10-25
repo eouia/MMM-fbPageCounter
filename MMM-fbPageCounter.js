@@ -2,14 +2,14 @@ Module.register("MMM-fbPageCounter",{
 
 	// Module config defaults.
 	defaults: {
-		longterm_access_token: "",
+		access_token: "",
 		page_id: "",
 		refresh_interval_sec: 10, //minimum 10. If your daily visitors of page are under 10, use 30 as this value.
 		size: "default"
 	},
 
 	getStyles: function() {
-		return ["MMM-fbPageCounter.css", "flipcounter.css", "font-awesome.css"]
+		return ["MMM-fbPageCounter.css", "flipcounter.css"]
 	},
 
 	getScripts: function() {
@@ -24,16 +24,14 @@ Module.register("MMM-fbPageCounter",{
 		this.apiUrl = "https://graph.facebook.com/v2.10/"
 			+ this.config.page_id
 			+ "/?fields=fan_count,name&access_token="
-			+ this.config.longterm_access_token
+			+ this.config.access_token
 
 		if (this.config.refresh_interval_sec < 10) {
 			this.config.refresh_interval_sec = 10
 		}
-		var self = this
 	},
 
 	getDom: function() {
-		console.log("updated!")
 		var wrapper = document.createElement("div")
 		wrapper.className = "fb_board"
 		var myCounter = document.createElement("ul")
@@ -57,18 +55,15 @@ Module.register("MMM-fbPageCounter",{
 	},
 
 	updateCounter: function() {
-		console.log("wow")
 		var self = this
 		this.loadJSON(this.apiUrl,
 			function (result) {
-				console.log(result)
 				self.fb = result
 			},
 			function (err) {
 				console.log("[FBKCNT] ERROR!", err)
 			}
 		)
-		console.log("?", this.fb.fan_count)
 		if (this.fb.fan_count) {
 			this.myCounter.incrementTo(this.fb.fan_count, 100, 20)
 		}
