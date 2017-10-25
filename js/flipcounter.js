@@ -169,11 +169,9 @@ var flipCounter = function(d, options){
     cycles--
 
     var inc = Math.ceil((targetValue - curValue) / cycles)
-    console.log(curValue, targetValue, pace, inc)
-    if (curValue < targetValue) {
+        if (curValue < targetValue) {
       counter.auto = true
-      console.log("!!", counter.value + inc)
-      if (counter.value + inc < targetValue) {
+          if (counter.value + inc < targetValue) {
         counter.value += inc
       } else {
         counter.value = targetValue
