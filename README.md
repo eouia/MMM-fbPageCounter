@@ -1,3 +1,7 @@
+> After Facebook API version updated, this module will not work without Business account or Personal approval. I'll make a fix and refactoring for current FB API.
+
+
+
 # MMM-fbPageCounter
 "Likes" counter of facebook page.
 
